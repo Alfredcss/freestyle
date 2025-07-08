@@ -1,0 +1,59 @@
+<div class="container" style="margin: 20px">
+  <h2>Listado de Raperos Internacionales</h2>
+
+  <div class="d-flex justify-content-end mb-3">
+    <a [routerLink]="['/agregar-free']" class="btn btn-success">
+      + Agregar Rapero
+    </a>
+  </div>
+
+  <!-- Si no hay empleados -->
+  <p class="text-center" *ngIf="ListarRaperos.length === 0">
+    No hay raperos registrados
+  </p>
+
+  <!-- Tabla si hay empleados -->
+  <div class="table-responsive">
+    <table
+      class="table table-bordered table-hover align-middle w-100"
+      *ngIf="ListarRaperos.length > 0"
+    >
+      <thead class="table-success">
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Alias</th>
+          <th>Origen</th>
+          <th>Campeonatos</th>
+          <th style="width: 90px">Editar</th>
+          <th style="width: 110px">Eliminar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let rapero of ListarRaperos; trackBy: trackById">
+          <td>{{ rapero._id }}</td>
+          <td>{{ rapero.nombre }}</td>
+          <td>{{ rapero.alias }}</td>
+          <td>{{ rapero.origen }}</td>
+          <td>{{ rapero.campeonatos }}</td>
+          <td>
+            <a
+              [routerLink]="['/editar-free', rapero._id]"
+              class="btn btn-warning btn-sm w-100"
+            >
+              Editar
+            </a>
+          </td>
+          <td>
+            <button
+              (click)="eliminarRapero(rapero._id)"
+              class="btn btn-danger btn-sm w-100"
+            >
+              Eliminar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

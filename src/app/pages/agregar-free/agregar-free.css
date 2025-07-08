@@ -1,0 +1,65 @@
+/* Formulario de agregar moderno */
+.container {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(80, 80, 160, 0.12);
+  padding: 48px 40px;
+  margin-top: 48px;
+  max-width: 520px;
+}
+h2 {
+  font-weight: 800;
+  margin-bottom: 32px;
+  color: #2d2e83;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+}
+.form-label {
+  font-weight: 700;
+  color: #5f72bd;
+  font-size: 1.1rem;
+}
+.form-control {
+  border-radius: 10px;
+  border: 1.5px solid #bdbdfc;
+  font-size: 1.15rem;
+  padding: 12px 14px;
+  margin-bottom: 6px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-control:focus {
+  border-color: #5f72bd;
+  box-shadow: 0 0 0 2px #9f7aea44;
+}
+.btn-success {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  font-size: 1.15rem;
+  padding: 12px 0;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+  border: none;
+  margin-top: 18px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.btn-success:hover {
+  box-shadow: 0 2px 12px #38f9d766;
+  transform: translateY(-2px) scale(1.04);
+}
+.invalid-feedback {
+  color: #d32f2f;
+  font-size: 1.05em;
+  margin-bottom: 8px;
+}
+.alert-danger {
+  margin-top: 10px;
+}
+@media (max-width: 600px) {
+  .container {
+    padding: 12px 2px;
+    max-width: 100vw;
+  }
+  h2 {
+    font-size: 1.2rem;
+  }
+}

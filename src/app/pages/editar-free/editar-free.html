@@ -1,0 +1,89 @@
+<div class="container">
+  <h2>Editar Rapero</h2>
+  <form [formGroup]="raperoForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="form-group">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input
+        id="nombre"
+        type="text"
+        class="form-control"
+        formControlName="nombre"
+        [class.is-invalid]="enviado && raperoForm.get('nombre')?.invalid"
+      />
+      <div
+        *ngIf="enviado && raperoForm.get('nombre')?.invalid"
+        class="invalid-feedback"
+      >
+        El nombre es obligatorio.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="alias" class="form-label">Alias</label>
+      <input
+        id="alias"
+        type="text"
+        class="form-control"
+        formControlName="alias"
+        [class.is-invalid]="enviado && raperoForm.get('alias')?.invalid"
+      />
+      <div
+        *ngIf="enviado && raperoForm.get('alias')?.invalid"
+        class="invalid-feedback"
+      >
+        El alias es obligatorio.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="origen" class="form-label">Origen</label>
+      <input
+        id="origen"
+        type="text"
+        class="form-control"
+        formControlName="origen"
+        [class.is-invalid]="enviado && raperoForm.get('origen')?.invalid"
+      />
+      <div
+        *ngIf="enviado && raperoForm.get('origen')?.invalid"
+        class="invalid-feedback"
+      >
+        El origen es obligatorio.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="campeonatos" class="form-label">Campeonatos</label>
+      <input
+        id="campeonatos"
+        type="text"
+        class="form-control"
+        formControlName="campeonatos"
+        [class.is-invalid]="enviado && raperoForm.get('campeonatos')?.invalid"
+      />
+      <div
+        *ngIf="enviado && raperoForm.get('campeonatos')?.invalid"
+        class="invalid-feedback"
+      >
+        Este campo es obligatorio.
+      </div>
+    </div>
+    <div *ngIf="errorMsg" class="alert alert-danger">{{ errorMsg }}</div>
+    <div
+      style="
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        margin-top: 32px;
+      "
+    >
+      <button type="submit" class="btn btn-primary btn-lg-custom">
+        Guardar Cambios
+      </button>
+      <button
+        type="button"
+        class="btn btn-secondary btn-lg-custom"
+        (click)="cancelar()"
+      >
+        Cancelar
+      </button>
+    </div>
+  </form>
+</div>
