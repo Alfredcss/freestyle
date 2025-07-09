@@ -12,7 +12,7 @@ import {
 })
 export class Freestyle {
   // propiedades
-  baseUri: string = 'https://backend-54ww.onrender.com/api';
+  baseUri: string = 'https://backend-54ww.onrender.com';
   //poner aqui la ip del backen en deploy y luego subir el angular a un hosting
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
