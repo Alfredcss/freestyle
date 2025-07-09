@@ -54,6 +54,34 @@ ng e2e
 
 Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
+## Deployment to Render
+
+This project is configured for deployment on Render. The deployment uses the following configuration:
+
+### Build Configuration
+
+- **Build Command**: `npm install && npm run build`
+- **Publish Directory**: `./dist/freestyle/browser`
+- **Environment**: Static Site
+
+### Render Configuration
+
+The project includes a `render.yaml` file that configures the deployment settings for Render.
+
+### Manual Deployment Steps
+
+1. Push your code to a Git repository (GitHub, GitLab, etc.)
+2. Connect your repository to Render
+3. Render will automatically detect the `render.yaml` configuration
+4. The build process will install dependencies and build the Angular application
+5. The static files will be served from the `dist/freestyle/browser` directory
+
+### Environment Variables
+
+- `NODE_ENV`: Set to `production` for optimized builds
+
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+For Render deployment documentation, visit [Render Documentation](https://render.com/docs).
